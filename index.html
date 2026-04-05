@@ -440,9 +440,272 @@
           font-size: 12px;
           color: #7f9ac0;
         }
+        /* ── ONBOARDING ── */
+        .onboarding {
+            position: fixed;
+            inset: 0;
+            z-index: 4000;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 24px 20px;
+            background: rgba(240,248,255,0.97);
+            backdrop-filter: blur(12px);
+        }
+        .onboarding.show { display: flex; }
+
+        .ob-shell { width: min(100%, 400px); }
+
+        .ob-card {
+            background: white;
+            border-radius: 24px;
+            padding: 24px 22px 20px;
+            box-shadow: 0 12px 50px rgba(74,144,226,0.18);
+            border: 2px solid rgba(74,144,226,0.15);
+            overflow: hidden;
+        }
+
+        .ob-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .ob-brand {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 13px;
+            font-weight: bold;
+            color: #4a90e2;
+        }
+        .ob-brand-icon { font-size: 20px; }
+        .ob-skip {
+            background: none;
+            border: none;
+            color: #aab4be;
+            font-family: Arial, sans-serif;
+            font-size: 13px;
+            cursor: pointer;
+            padding: 4px 8px;
+            border-radius: 12px;
+            transition: background .2s;
+        }
+        .ob-skip:hover { background: #f0f8ff; color: #4a90e2; }
+
+        .ob-slider-wrap { overflow: hidden; }
+        .ob-slider {
+            display: flex;
+            transition: transform .4s cubic-bezier(.22,.9,.24,1);
+            will-change: transform;
+            touch-action: pan-y;
+        }
+        .ob-slide {
+            min-width: 100%;
+            text-align: center;
+            padding: 4px 8px 8px;
+            user-select: none;
+        }
+
+        .ob-hero {
+            width: 96px; height: 96px;
+            margin: 0 auto 18px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #e3f2fd, #bbdefb);
+            border: 3px solid rgba(74,144,226,0.2);
+            font-size: 2.8rem;
+        }
+
+        .ob-kicker {
+            font-size: 10px;
+            letter-spacing: .15em;
+            text-transform: uppercase;
+            color: #4a90e2;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+        .ob-slide h2 {
+            font-size: 1.35rem;
+            font-weight: bold;
+            line-height: 1.25;
+            margin-bottom: 12px;
+            color: #1a2a3a;
+        }
+        .ob-slide h2 em { font-style: normal; color: #4a90e2; }
+        .ob-slide p {
+            font-size: 14px;
+            line-height: 1.7;
+            color: #5a6a7a;
+            max-width: 300px;
+            margin: 0 auto 14px;
+            font-family: Arial, sans-serif;
+            font-weight: normal;
+        }
+        .ob-chips {
+            display: flex;
+            justify-content: center;
+            gap: 6px;
+            flex-wrap: wrap;
+            margin-top: 6px;
+        }
+        .ob-chip {
+            font-size: 11px;
+            padding: 5px 10px;
+            border-radius: 999px;
+            background: #e3f2fd;
+            color: #1565c0;
+            font-weight: bold;
+            border: 1px solid rgba(74,144,226,0.2);
+        }
+
+        .ob-progress {
+            display: flex;
+            justify-content: center;
+            gap: 7px;
+            margin: 18px 0 14px;
+        }
+        .ob-dot {
+            width: 8px; height: 8px;
+            border-radius: 50%;
+            background: #dee2e6;
+            transition: all .3s ease;
+        }
+        .ob-dot.active {
+            width: 22px;
+            border-radius: 999px;
+            background: linear-gradient(90deg, #4a90e2, #67b3f0);
+        }
+
+        .ob-actions { display: flex; gap: 10px; }
+        .ob-btn {
+            flex: 1;
+            border: none;
+            border-radius: 14px;
+            padding: 14px 18px;
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform .15s, background .2s;
+        }
+        .ob-btn:active { transform: scale(.97); }
+        .ob-btn.secondary {
+            background: #f0f4f8;
+            color: #6c757d;
+        }
+        .ob-btn.secondary:hover { background: #e0e8f0; }
+        .ob-btn.primary {
+            background: linear-gradient(45deg, #4a90e2, #67b3f0);
+            color: white;
+            box-shadow: 0 4px 14px rgba(74,144,226,0.35);
+        }
+        .ob-btn.primary:hover { background: linear-gradient(45deg, #3a80d2, #57a3e0); }
+        .ob-btn.install {
+            background: linear-gradient(45deg, #28a745, #20c997);
+            box-shadow: 0 4px 14px rgba(40,167,69,0.3);
+        }
+
+        .ob-swipe-hint {
+            text-align: center;
+            font-size: 11px;
+            color: #aab4be;
+            margin-top: 12px;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Bouton "Revoir l'intro" dans le footer */
+        .btn-replay {
+            background: transparent;
+            border: 1px solid rgba(74,144,226,0.3);
+            color: rgba(74,144,226,0.6);
+            padding: 6px 14px;
+            border-radius: 999px;
+            font-size: 11px;
+            cursor: pointer;
+            transition: all .25s;
+            margin-top: 10px;
+            display: inline-block;
+            font-family: Arial, sans-serif;
+        }
+        .btn-replay:hover {
+            border-color: #4a90e2;
+            color: #4a90e2;
+            background: rgba(74,144,226,0.06);
+        }
+
     </style>
 </head>
 <body>
+
+<!-- ONBOARDING -->
+<div id="onboarding" class="onboarding">
+  <div class="ob-shell">
+    <div class="ob-card">
+      <div class="ob-top">
+        <div class="ob-brand"><span class="ob-brand-icon">🗣️</span> ParleAvecMoi</div>
+        <button class="ob-skip" id="obSkip">Passer</button>
+      </div>
+      <div class="ob-slider-wrap">
+        <div class="ob-slider" id="obSlider">
+
+          <!-- Slide 1 -->
+          <section class="ob-slide">
+            <div class="ob-hero">🗣️</div>
+            <div class="ob-kicker">Bienvenue</div>
+            <h2>Ta voix,<br><em>même sans parler.</em></h2>
+            <p>ParleAvecMoi te permet de construire des phrases et de les faire entendre — avec des pictogrammes simples et une voix naturelle.</p>
+            <div class="ob-chips">
+              <span class="ob-chip">🖼️ Pictogrammes</span>
+              <span class="ob-chip">🔊 Synthèse vocale</span>
+              <span class="ob-chip">⭐ Favoris</span>
+            </div>
+          </section>
+
+          <!-- Slide 2 -->
+          <section class="ob-slide">
+            <div class="ob-hero">👆</div>
+            <div class="ob-kicker">Comment ça marche</div>
+            <h2>Touche,<br><em>compose, parle.</em></h2>
+            <p>Choisis "je veux" ou "je ne veux pas", puis touche les pictogrammes pour construire ta phrase. Appuie sur 🔊 Parler pour l'entendre à voix haute.</p>
+            <div class="ob-chips">
+              <span class="ob-chip">✅ Je veux</span>
+              <span class="ob-chip">❌ Je ne veux pas</span>
+              <span class="ob-chip">🆘 Urgence</span>
+            </div>
+          </section>
+
+          <!-- Slide 3 -->
+          <section class="ob-slide">
+            <div class="ob-hero">📲</div>
+            <div class="ob-kicker">Prêt à utiliser</div>
+            <h2>Installe l'app<br><em>sur ton écran.</em></h2>
+            <p>Gratuite, sans compte, fonctionne sans internet. Ajoute-la à ton écran d'accueil pour l'avoir toujours à portée de main.</p>
+            <div class="ob-chips">
+              <span class="ob-chip">💾 Données locales</span>
+              <span class="ob-chip">📵 Hors-ligne</span>
+              <span class="ob-chip">🔒 Privé</span>
+            </div>
+          </section>
+
+        </div>
+      </div><!-- /ob-slider-wrap -->
+
+      <div class="ob-progress">
+        <span class="ob-dot active"></span>
+        <span class="ob-dot"></span>
+        <span class="ob-dot"></span>
+      </div>
+      <div class="ob-actions">
+        <button class="ob-btn secondary" id="obPrev">Retour</button>
+        <button class="ob-btn primary"   id="obNext">Suivant</button>
+      </div>
+      <p class="ob-swipe-hint">Glisse ← → pour naviguer</p>
+    </div>
+  </div>
+</div>
 
 <div class="app">
 
@@ -586,6 +849,7 @@
     <div class="lw-footer-legal">
       <p>© 2026 laboWeb</p>
       <p class="lw-footer-signature">Créé avec 💛 par Johanna</p>
+      <button class="btn-replay" id="replayOnboardingBtn">✨ Revoir l'intro</button>
     </div>
 
   </div>
@@ -988,6 +1252,84 @@ function showFeedback(msg) {
   el.classList.add('show');
   setTimeout(() => el.classList.remove('show'), 2500);
 }
+
+// ── ONBOARDING ──
+(function () {
+  const SEEN_KEY  = 'pam_onboarding_seen';
+  const ob        = document.getElementById('onboarding');
+  const slider    = document.getElementById('obSlider');
+  const dots      = [...document.querySelectorAll('.ob-dot')];
+  const btnPrev   = document.getElementById('obPrev');
+  const btnNext   = document.getElementById('obNext');
+  const btnSkip   = document.getElementById('obSkip');
+  const btnReplay = document.getElementById('replayOnboardingBtn');
+
+  let step = 0;
+  let swipeStartX = 0, swipeCurX = 0, swiping = false;
+  let deferredPromptOb = null;
+
+  // Écoute le prompt PWA pour le slide 3
+  window.addEventListener('beforeinstallprompt', e => { deferredPromptOb = e; });
+
+  function update() {
+    slider.style.transform = `translateX(-${step * 100}%)`;
+    dots.forEach((d, i) => d.classList.toggle('active', i === step));
+    btnPrev.style.opacity       = step === 0 ? '0.35' : '1';
+    btnPrev.style.pointerEvents = step === 0 ? 'none' : 'auto';
+    if (step === 2) {
+      btnNext.textContent = deferredPromptOb ? "📲 Installer" : 'Commencer !';
+      btnNext.classList.toggle('install', !!deferredPromptOb);
+    } else {
+      btnNext.textContent = 'Suivant →';
+      btnNext.classList.remove('install');
+    }
+  }
+
+  function closeOb() {
+    ob.classList.remove('show');
+    try { localStorage.setItem(SEEN_KEY, 'true'); } catch(e) {}
+  }
+
+  async function nextStep() {
+    if (step < 2) { step++; update(); return; }
+    if (deferredPromptOb) {
+      deferredPromptOb.prompt();
+      const { outcome } = await deferredPromptOb.userChoice;
+      if (outcome === 'accepted') showFeedback('📱 App installée !');
+      deferredPromptOb = null;
+    }
+    closeOb();
+  }
+
+  btnNext.addEventListener('click', nextStep);
+  btnPrev.addEventListener('click', () => { if (step > 0) { step--; update(); } });
+  btnSkip.addEventListener('click', closeOb);
+  btnReplay.addEventListener('click', () => { step = 0; update(); ob.classList.add('show'); });
+
+  // Swipe tactile
+  slider.addEventListener('touchstart', e => { swiping = true; swipeStartX = swipeCurX = e.touches[0].clientX; }, { passive: true });
+  slider.addEventListener('touchmove',  e => { if (swiping) swipeCurX = e.touches[0].clientX; }, { passive: true });
+  slider.addEventListener('touchend',   () => {
+    if (!swiping) return;
+    const diff = swipeCurX - swipeStartX;
+    if (Math.abs(diff) > 50) { step = diff < 0 ? Math.min(step + 1, 2) : Math.max(step - 1, 0); update(); }
+    swiping = false;
+  });
+  // Swipe souris (test desktop)
+  slider.addEventListener('mousedown', e => { swiping = true; swipeStartX = swipeCurX = e.clientX; });
+  window.addEventListener('mousemove', e => { if (swiping) swipeCurX = e.clientX; });
+  window.addEventListener('mouseup',   () => {
+    if (!swiping) return;
+    const diff = swipeCurX - swipeStartX;
+    if (Math.abs(diff) > 50) { step = diff < 0 ? Math.min(step + 1, 2) : Math.max(step - 1, 0); update(); }
+    swiping = false;
+  });
+
+  // Premier lancement
+  try {
+    if (!localStorage.getItem(SEEN_KEY)) { ob.classList.add('show'); update(); }
+  } catch(e) { /* localStorage indisponible (file://) */ }
+})();
 </script>
 </body>
 </html>
